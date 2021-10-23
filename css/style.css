@@ -1,0 +1,965 @@
+* {
+    font-family: "Helvetica", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    width: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p,
+a,
+label {
+    font-family: "Helvetica", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    cursor: text;
+    text-align: center;
+    padding-bottom: 0.1em;
+}
+
+h3 {
+    font-family: "Helvetica", serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+}
+
+::selection {
+    color: #fff;
+    background-color: #1d1d1f;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.button-container {
+    padding-top: 1.5em;
+}
+
+.button {
+    font-family: "helvetica", sans-serif;
+    padding: 0.5em 1.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 3em;
+    padding: 0;
+    transition-duration: 0.5s;
+    z-index: 1;
+    background-color: rgba(34, 49, 52, 1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-transparent {
+    height: 10%;
+    background-color: #1d1d1f;
+}
+
+.nav-scrolled,
+.nav-sticky {
+    background-color: #000;
+}
+
+.nav-drop {
+    background: #232323;
+}
+
+.nav-scrolled {
+    position: fixed !important;
+}
+
+.nav-sticky {
+    position: sticky;
+    width: 100%;
+}
+
+.nav-left {
+    margin-left: 7.5%;
+    height: 3em;
+}
+
+.nav-left img {
+    display: inline-block;
+    height: 3em;
+    padding-top: 8%;
+    vertical-align: middle;
+    /* padding: 0 0.5em 0 1.5em; */
+}
+
+nav a {
+    font-family: "Helvetica", sans-serif;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+nav p {
+    font-family: "Helvetica", sans-serif;
+    display: inline-block;
+    padding-top: 10%; 
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.nav-right {
+    margin-right: 7.5%;
+    padding-top: 1%;
+}
+
+.nav-right>ul>li {
+    display: inline-block;
+}
+
+.nav-right li a {
+    margin-right: 2.25em;
+    color: #fff;
+    display: inline-block;
+}
+
+.nav-right ul li:last-child a {
+    margin-right: 0;
+}
+
+.nav-active {
+    font-weight: 600;
+}
+
+.ddown-content {
+    display: none;
+    position: absolute;
+}
+
+.ddown-content ul {
+    display: block !important;
+    list-style: none;
+    background-color: #000;
+    border-radius: 12.5px;
+    padding: 0.5em 0 0.5em 0;
+    margin: 1em 0 0 -1em;
+    min-width: 150px;
+}
+
+.ddown-content ul li a {
+    padding: 0.5em 0 0.5em 1em;
+    font-size: 0.875rem;
+    width: 150px;
+    margin-right: 0;
+}
+
+.ddown-content ul li:hover {
+    background-color: #232323;
+}
+
+.ddown-content ul li:hover a {
+    opacity: 1;
+}
+
+.dropdown:hover .ddown-content {
+    display: block;
+}
+
+.nav-hamburger {
+    display: none;
+}
+
+.fa-chevron-down {
+    color: #fff;
+    font-size: 20px;
+    padding-left: 0.2em;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.banner {
+    height: 50vw;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    padding: 0 7.5%;
+}
+
+.banner .container {
+    width: 100%;
+}
+
+.banner-home {
+    background-color: #F5EEE8;
+    background-size: 150vw, cover;
+}
+
+.banner p {
+    font-family: "Helvetica", sans-serif;
+    font-size: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.banner-home p {
+    width: 65%;
+    font-style: italic;
+    color: #b17c85;
+}
+
+.banner-home h1 {
+    color: black;
+}
+
+.banner-button {
+    color: gray;
+    background-color: #F5EEE8;
+    box-shadow: 4px 6px burlywood;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid gray;
+}
+
+.banner-button:hover {
+    background-color: wheat;
+}
+
+.banner-button:active {
+    box-shadow: none;
+    position: relative;
+    top: 7px;
+}
+
+.gallery {
+    background-color: #1d1d1f;
+    color: #fff;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+.about-container {
+    padding: 2%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.ourgallery {
+    text-decoration: underline;
+    font-style: italic;
+    padding-top: 50px;
+}
+
+.aboutus {
+    padding-top: 50px;
+}
+
+.aboutus h4 {
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.aboutus h2 {
+    font-style: italic;
+}
+
+.aboutus p {
+    padding-top: 40px;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.about {
+    background-color:#F5EEE8;
+    color: #2f4f4f;
+    text-align: center;
+}
+
+.menu {
+    height: auto;
+    background-color: #1d1d1f;
+    color: #fff;
+    padding: 5% 2.5%;
+}
+
+.menu-content {
+    display: flex;
+    padding: 1.5em 0;
+}
+
+.menu h3 {
+    margin-bottom: 2%;
+}
+
+.menu-one-third {
+    width: 33.3%;
+    padding: 0 1%;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu-img-container {
+    align-items: center;
+}
+
+.menu-one-third img {
+    width: 75%;
+}
+
+.menu-one-third p {
+    padding: 0.15em;
+}
+
+#boots {
+    width: 60%;
+}
+
+#trousers {
+    width: 60%;
+}
+
+#dress {
+    width: 65%;
+}
+
+#vest {
+    width: 65%;
+}
+
+#purple {
+    width: 61%;
+}
+
+#crop {
+    width: 60%;
+}
+
+.cart-button {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    font-size: 17px;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.cart-button:hover {
+    background-color:#F5EEE8;
+    color: #000000;
+}
+
+.contact {
+    background-color: black;
+}
+
+.contact-container {
+    display: flex;
+}
+
+.contact iframe {
+    border: 0;
+    width: 42.5%;
+}
+
+.contact-left {
+    width: 57.5%;
+    color: white;
+    padding: 5% 1%;
+    text-align: center;
+}
+
+.contact-left h2 {
+    padding: 0 0.5em 0.5em 0.5em;
+}
+
+.contact-flex {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 1em;
+    align-items: center;
+    text-align: justify;
+}
+
+.contact-flex i {
+    padding-right: 0.5em;
+}
+
+.contact-flex a {
+    color: #fff;
+}
+
+.social {
+    padding: 0.5em 0 2em 0;
+    vertical-align: middle;
+}
+
+.social a i {
+    color: #fff;
+    padding-right: 0.3em;
+    font-size: 28px;
+}
+
+.contact iframe {
+    width: 100%;
+    padding: 50px;
+}
+
+.contact-flex i {
+    font-size: 28px;
+}
+
+.contact-flex .fa-phone-alt {
+    font-size: 24px;
+    width: 20px;
+}
+
+.social a i {
+    transition-duration: 0.4s;
+}
+
+.social a i.fa-youtube {
+    padding-right: 0;
+}
+
+.social a i:hover {
+    opacity: 0.6;
+}
+
+.contact-button {
+    color:rosybrown;
+    background-color: transparent;
+    border: 2px solid gray;
+}
+
+.contact-button:hover {
+    background-color: #fff;
+    color: rosybrown;
+}
+
+footer {
+    padding: 4% 12.5% 4% 12.5%;
+    background-color: #202020;
+}
+
+footer {
+    padding: 4% 12.5% 4% 12.5%;
+    background-color: #1d1d1f;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+footer h6,
+footer p,
+footer a {
+    color: #fff;
+    text-align: left;
+}
+
+footer p {
+    font-family: "Helvetica", sans-serif;
+    color: #a1a1a6;
+}
+
+footer h6 {
+    color: White;
+}
+
+footer p,
+footer a {
+    font-size: 0.875rem;
+}
+
+.footer-top h6 {
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    padding-bottom: 0.75em;
+}
+
+
+
+#follow {
+    padding-top: 2em;
+}
+
+.footer-top>div {
+    display: flex;
+    width: 50%;
+}
+
+.footer-section {
+    width: 100%;
+    padding-bottom: 1.5em;
+}
+
+.footer-section p {
+    padding: 0.15em 0;
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    border-top: 1px solid #808080;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 969px) {
+    .nav-hamburger {
+        display: block;
+        width: 25%;
+    }
+    .nav-hamburger {
+        margin-right: 7.5%;
+    }
+    #ic-hamburger {
+        float: right;
+        height: 2em;
+        padding: 0;
+        cursor: pointer;
+    }
+    .nav-right {
+        display: none;
+    }
+    .input-none {
+        display: none;
+    }
+    nav input:checked~.nav-hamburger-content {
+        height: 90vh;
+        opacity: 1;
+    }
+    nav input:checked~.nav-hamburger-content>ul {
+        display: block;
+    }
+    .nav-hamburger-content {
+        height: 0;
+        opacity: 0;
+        position: fixed;
+        right: 0;
+        margin-top: 3em;
+        padding: 1.5em 0;
+        background: #232323;
+        width: 100%;
+        transition-duration: 0.5s;
+    }
+    .nav-hamburger-content>ul {
+        display: none;
+        height: 85%;
+        overflow: auto;
+    }
+    .nav-hamburger-content ul {
+        list-style-type: none;
+        padding: 1em 0;
+    }
+    .nav-hamburger-content ul li {
+        padding: 0.5em 7.5%;
+    }
+    .nav-hamburger-content ul li a {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    .nav-hamburger-content ul li a:hover {
+        opacity: 0.75;
+    }
+    .nav-hamburger-subcontent {
+        display: none;
+        padding-bottom: 0 !important;
+        transition-duration: 0.5s;
+    }
+    .nav-hamburger-subcontent li {
+        padding-left: 5% !important;
+    }
+    .nav-hamburger-subcontent li a {
+        font-size: 1.125rem !important;
+    }
+    .nav-hamburger-content ul li input:checked~.nav-hamburger-subcontent {
+        display: block;
+    }
+    .nav-hamburger-content ul li input:checked~label>i {
+        transform: rotate(180deg);
+    }
+    .banner-home p {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 969px) {
+    .banner-home {
+        height: 77vw;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .banner-home {
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+    nav p {
+        display: none;
+    }
+    .banner-home p {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 670px) {
+    * {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 2.75rem;
+    }
+    .banner-home {
+        background-position: -25vw;
+    }
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #2e8b57;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  
+  /* Style the container */
+  .formcontainer {
+    border-radius: 5px;
+    background-color: black;
+    padding: 20px 30px 20px 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 50%;
+  }
+  
+  /* Floating column for labels: 25% width */
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  /* iniiii menu adidas */
+  #bgshoes {
+      width: 60%;
+  }
+
+  #stanno {
+      width: 62%;
+  }
+  
+  /* iniiii menu zara */
+  #blazer {
+      width: 58%;
+  }
+
+  /* ini buat form register */
+  * {box-sizing: border-box}
+
+
+/* Add padding to containers */
+.containerform {
+  padding: 16px;
+  background-color: black;
+  width: 100%;
+}
+
+.containerform h1 {
+    margin-top: 50px;
+    font-size: 50px;
+    color: white
+}
+
+.containerform p {
+    font-style: italic;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #f1f1f1;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+  
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: #1e90ff;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color:black;
+  text-align: center;
+  color: #f1f1f1;
+  width: 100%;
+}
+
+/** buat login form */
+/* Bordered form */
+form {
+    /* border: 3px solid #f1f1f1; */
+    background-color: black;
+    padding-top: 10%;
+    }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;   
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    padding-bottom: 60px;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .containersign {
+    padding: 16px;
+    background-color: #1d1d1f;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    color: white;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+
+  label {
+      color: white;
+  }
+
+  .containersign hr {
+      margin-top: 30px;
+  }
+
+  .menu h2 {
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+
+  video {
+      background-color: #1d1d1f;
+      color: black;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+  }
